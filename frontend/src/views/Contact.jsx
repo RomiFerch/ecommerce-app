@@ -9,7 +9,7 @@ function Contact() {
   return (
    <Container className='w-100 my-5' >  
    <div className='container-flex my-3 p-2'>
-        <h1>En Sushi Foodtruck</h1> <h3> Estamos encantados de responder a todas tus consultas</h3> 
+        <h1>En Roomi Store</h1> <h3> Estamos encantados de responder a todas tus consultas</h3> 
         <h5>Completa los siguientes datos y te contactaremos a la brevedad</h5>
    </div>
     <InputGroup className="mb-3">

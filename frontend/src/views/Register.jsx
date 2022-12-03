@@ -1,93 +1,101 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/esm/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import imgl from "../assets/12.png";
-import UserContext from "../context/UserContext";
-import { useContext } from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './stylesForm.css'
 
-const Register = ({ tag }) => {
 
-  const state = useContext(UserContext);
-  console.log(state);
-
-  const [user, setUser] = useState({});
-  useEffect(() => {
-
-    document.title = tag === "login" ? "Iniciar sesión" : "Registro";
-  }, [tag]);
-//en UserProvider se crean las funciones  
-  const iniciarSesion = () => {
-    console.log("iniciar");
-  };
-  //Al presionar el boton si el tag es login. El tag llega por parametro desde App.js, al recibir ese tag se hace la condicional ejecuta la funcion del state del user provider, 
-  const handleSign = () => {
-    if (tag === "login") iniciarSesion();
-    else state.crearCuenta(user);
-  };
-  const handleInput = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-  };
+function Register() {
   return (
-    <>
-      <Container>
-        <Row>
-          <Col className="mt-3">
-            <Form>
-              <h1 className="py-2 fw-bold text-center mt-4 mb-4">Sign Up </h1>
 
-              <Form.Group className="mb-3" controlId="Email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Ingresa tu Email"
-                  onChange={(e) => handleInput(e)}
-                />
-              </Form.Group>
+<>
+<section>
+  <div className="container py-5 h-100">
+    <div className="row justify-content-center align-items-center h-100">
+      <div className="col-12 col-lg-9 col-xl-7">
+        <div className="card shadow-2-strong card-registration" >
+          <div className="card-body p-4 p-md-5">
+            <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Registrate</h3>
+            <form>
 
-              <Form.Group className="mb-3" controlId="Password">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Contraseña"
-                  onChange={(e) => handleInput(e)}
-                />
-              </Form.Group>
+              <div className="row">
+                <div className="col-md-6 mb-4">
 
-              <Form.Group className="mb-3" controlId="Checkbox">
-                <Form.Check type="checkbox" label="Mantener sesión abierta" />
-              </Form.Group>
+                  <div className="form-outline">
+                    <input type="text" id="firstName" className="form-control form-control-lg" />
+                    <label className="form-label" for="firstName">Nombre</label>
+                  </div>
 
-              <Button
-                variant="primary"
-                type="submit"
-                className="btn-login rounded-pill"
-                onClick={handleSign}
-              >
-                {tag === "login" ? "Iniciar sesión" : "Crear cuenta"}
-              </Button>
-              <Link
-                to={tag === "login" ? "/signup" : "/login"}
-                className="text-center mt-4"
-              >
-                {tag === "login" ? "Crear cuenta" : "Iniciar sesión"}
-              </Link>
-            </Form>
-          </Col>
+                </div>
+                <div className="col-md-6 mb-4">
 
-          <Col className="col-md-6">
-            <img src={imgl} alt="" className="d-inline-block w-100" />
-          </Col>
-        </Row>
-      </Container>
-    </>
-  );
-};
+                  <div className="form-outline">
+                    <input type="text" id="lastName" className="form-control form-control-lg" />
+                    <label className="form-label" for="lastName">Apellido</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div className="form-outline datepicker w-100">
+                    <input type="date" className="form-control form-control-lg" id="birthdayDate" />
+                    <label for="birthdayDate" className="form-label">Fecha de Nacimiento</label>
+                  </div>
+
+                </div>
+                
+              </div>
+
+              <div className="row">
+                <div className="col-md-6 mb-4 pb-2">
+
+                  <div className="form-outline">
+                    <input type="email" id="emailAddress" className="form-control form-control-lg" />
+                    <label className="form-label" for="emailAddress">Email</label>
+                  </div>
+
+                </div>
+                <div className="col-md-6 mb-4 pb-2">
+
+                  <div className="form-outline">
+                    <input type="password" id="password" className="form-control form-control-lg" />
+                    <label className="form-label" for="password">Contraseña</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div className="col-md-6 mb-4">
+
+                  <h6 className="mb-2 pb-1">Subscribirme al newlestter</h6>
+
+                  <div className="form-check form-check-inline">
+                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="newlestter_si"
+                      value="option1" checked />
+                    <label className="form-check-label" for="newlestter_si">Si</label>
+                  </div>
+
+                  <div className="form-check form-check-inline">
+                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                      value="option2" />
+                    <label className="form-check-label" for="newlestter_no">No</label>
+                  </div>
+
+                </div>
+
+              <div className="mt-4 pt-2">
+                <input className="btn btn-primary btn-lg" type="submit" value="Submit" />
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  </>
+  )  
+}
 
 export default Register;

@@ -1,6 +1,6 @@
 import UserContext from './UserContext'
 import { useReducer } from 'react'
-import userReducers from './userReducers'
+import userReducers from './UserReducer'
 import axios from 'axios'
 
 const UserProvider = ({ children }) => {

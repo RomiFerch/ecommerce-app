@@ -7,11 +7,12 @@ import Footer from './components/Footer';
 import Login from './views/Login';
 import Notfound from './views/Notfound';
 //import { setState } from "react";
-import { useContext } from 'react';
-import UserContext from './context/UserContext';
+//import { useContext } from 'react';
+//import UserContext from './context/UserContext';
 
 import Contact from './views/Contact';
 import Products from './views/Products';
+import Register from './views/Register';
 
 
 
@@ -33,6 +34,8 @@ function App() {
           <Route path='/Products' element={<Products />}></Route>
           
           <Route path="/login" element={<Login tag="login" />} />
+          <Route path="/register" element={<Register tag="register" />} />
+          
           
 
           {/* {<Route path='/Login' element={usuario ? <Inicio/> : <Login />}></Route>} */}

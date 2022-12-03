@@ -1,11 +1,9 @@
 import CardGroup from "react-bootstrap/CardGroup";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 import img1 from "../assets/1 2.png";
 import img2 from "../assets/2 2.png";
-import img3 from "../assets/7.png";
 import Button from "react-bootstrap/Button";
 import fav from "../assets/9.png";
 import gohan from "../assets/1.png";

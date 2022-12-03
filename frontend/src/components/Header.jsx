@@ -9,7 +9,7 @@ const Header = () => {
     <>
       <Navbar className="navb" 
               variant="light" 
-              sticky="top">
+              >
         <Container>
           <Navbar.Brand href="/">
             <img

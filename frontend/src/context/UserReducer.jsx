@@ -1,5 +1,5 @@
 
-const userReducers = (state, action) => {
+const userReducer = (state, action) => {
     const { type, payload } = action
   
     switch (type) {
@@ -13,4 +13,4 @@ const userReducers = (state, action) => {
     }
   }
   
-  export default userReducers
+  export default userReducer
